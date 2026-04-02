@@ -1,0 +1,133 @@
+<article class="plan-page">
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a>
+    <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    <a href="/plans/{{type}}s/">{{typeLabel}}</a>
+    <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">{{title}}</span>
+  </nav>
+
+  <!-- Gallery -->
+  <div class="gallery-wrap" id="gallery">
+    <div class="gallery-main" id="gallery-main" aria-label="Galerie d'images">
+      <img
+        src="{{firstImage}}"
+        alt="{{title}} - Vue principale"
+        id="gallery-img"
+        width="1200" height="675"
+        fetchpriority="high"
+        loading="eager"
+      >
+      <div class="gal-counter" id="gal-counter" aria-live="polite">1 / {{imageCount}}</div>
+      <div class="gal-nav" aria-hidden="true">
+        <button class="gal-btn" id="gal-prev" aria-label="Image précédente">‹</button>
+        <button class="gal-btn" id="gal-next" aria-label="Image suivante">›</button>
+      </div>
+    </div>
+    <div class="gal-thumbs" id="gal-thumbs" role="list" aria-label="Miniatures">
+      {{galleryThumbs}}
+    </div>
+  </div>
+
+  <!-- Layout: content + sidebar -->
+  <div class="plan-layout">
+    <div class="plan-content">
+      <div class="plan-category">{{typeLabel}}</div>
+      <h1 class="plan-h1">{{title}}</h1>
+      <p class="plan-subtitle-text">{{subtitle}}</p>
+
+      <!-- Specs -->
+      <div class="plan-specs-row" role="list" aria-label="Caractéristiques">
+        <div class="plan-spec" role="listitem">
+          <span class="plan-spec-val">{{rooms}}</span>
+          <span class="plan-spec-label">Chambres</span>
+        </div>
+        <div class="plan-spec" role="listitem">
+          <span class="plan-spec-val">{{bathrooms}}</span>
+          <span class="plan-spec-label">Salles de bain</span>
+        </div>
+        <div class="plan-spec" role="listitem">
+          <span class="plan-spec-val">{{surface}} m²</span>
+          <span class="plan-spec-label">Surface</span>
+        </div>
+        <div class="plan-spec" role="listitem">
+          <span class="plan-spec-val">{{floors}}</span>
+          <span class="plan-spec-label">Niveau(x)</span>
+        </div>
+        {{terrainSpec}}
+      </div>
+
+      <!-- Description -->
+      <p class="plan-desc">{{description}}</p>
+
+      <!-- Features -->
+      <h2 class="plan-features-title">Ce qui est inclus</h2>
+      <ul class="plan-features">
+        {{featuresList}}
+      </ul>
+
+      <!-- Cost estimate -->
+      <div style="background:var(--orange-bg);padding:16px 20px;border-left:3px solid var(--or);margin-bottom:32px">
+        <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terre);font-weight:600;margin-bottom:6px">Estimation du coût de construction</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--brun)">{{estimateCost}}</div>
+        <div style="font-size:.78rem;color:var(--gris);margin-top:4px">Estimation indicative selon les matériaux et la région</div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="plan-sidebar" aria-label="Options d'achat">
+      <div class="sidebar-box">
+        <!-- Plan Basique -->
+        <div class="sidebar-price-row">
+          <span class="sidebar-price">14 900</span>
+          <span class="sidebar-currency">FCFA</span>
+        </div>
+        <p class="sidebar-desc">Plan Basique — Téléchargement instantané PDF après paiement.</p>
+        <ul style="list-style:none;margin-bottom:20px">
+          {{basicFeaturesList}}
+        </ul>
+        <a
+          href="{{chariowBasicUrl}}"
+          class="btn-full btn-download"
+          rel="noopener"
+          aria-label="Télécharger le Plan Basique de {{title}}"
+        >
+          ⬇ Télécharger le Plan Basique
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- Plan Complet -->
+        <div class="sidebar-complete-price">{{priceComplete}} FCFA</div>
+        <p class="sidebar-complete-desc">Plan Complet — Accompagnement architectural sur mesure.</p>
+        <a
+          href="https://wa.me/237694327885?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Plan%20Complet%20{{title}}"
+          class="btn-full btn-whatsapp"
+          target="_blank"
+          rel="noopener"
+          aria-label="Commander le Plan Complet via WhatsApp"
+        >
+          💬 Commander le Plan Complet
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- Trust signals -->
+        <div class="sidebar-trust">
+          <div class="trust-item"><span class="trust-icon">⚡</span>Téléchargement instantané</div>
+          <div class="trust-item"><span class="trust-icon">🔒</span>Paiement sécurisé</div>
+          <div class="trust-item"><span class="trust-icon">📞</span>Support WhatsApp</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Similar Plans -->
+  {{similarPlans}}
+</article>
+
+<script src="/js/gallery.{{jsHash}}.js" defer></script>
+<script>
+  window.__GALLERY_IMAGES__ = {{galleryImages}};
+</script>

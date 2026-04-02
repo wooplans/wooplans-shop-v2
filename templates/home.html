@@ -1,0 +1,105 @@
+<!-- HERO -->
+<section id="hero" aria-label="Accueil WooPlans">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Plans architecturaux</div>
+    <h1 class="hero-title">
+      Des Plans de Maison <em>Modernes</em> pour l'Afrique
+    </h1>
+    <p class="hero-subtitle">
+      Téléchargez instantanément des plans de villas et duplex conçus pour l'Afrique francophone. Plans détaillés + estimation des coûts de construction.
+    </p>
+    <div class="hero-actions">
+      <a href="#catalogue" class="btn-primary">Voir les Plans</a>
+      <a href="/plans/villas/" class="btn-secondary">Villas</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">50+</div>
+        <div class="hero-stat-label">Plans disponibles</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Pays couverts</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Adapté à l'Afrique</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img
+      src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=75&auto=format&fm=webp"
+      alt="Villa moderne WooPlans"
+      class="hero-img"
+      width="900" height="700"
+      fetchpriority="high"
+      loading="eager"
+    >
+    <div class="hero-img-overlay"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-title">Téléchargement Instantané</div>
+      <div class="hero-badge-sub">Plan PDF + Estimation des coûts</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section id="concept" aria-label="Comment ça marche">
+  <div class="section-label">Comment ça marche</div>
+  <h2 class="section-title">3 Étapes vers Votre Maison</h2>
+  <p class="section-subtitle">Un processus simple et rapide pour obtenir votre plan architectural.</p>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">🏠</div>
+      <h3 class="step-title">Choisissez votre Plan</h3>
+      <p class="step-desc">Parcourez notre catalogue de villas et duplex modernes, filtrez par nombre de chambres et surface.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">⚡</div>
+      <h3 class="step-title">Téléchargement Instantané</h3>
+      <p class="step-desc">Après paiement, recevez immédiatement votre plan PDF avec estimation des coûts de construction.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🏗️</div>
+      <h3 class="step-title">Construisez avec Confiance</h3>
+      <p class="step-desc">Plans détaillés avec dimensions, devis quantitatif et guide de construction adapté à l'Afrique.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="section" aria-label="Catalogue des plans">
+  <div class="section-label">Notre Catalogue</div>
+  <h2 class="section-title">Plans de Maison Modernes</h2>
+  <p class="section-subtitle">Villas et duplex conçus pour le Cameroun, la Côte d'Ivoire et le Sénégal.</p>
+
+  <!-- Filters (JS enhances, all cards visible without JS) -->
+  <div class="filters-bar" role="group" aria-label="Filtrer les plans">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous les plans</button>
+    <button class="filter-btn" data-filter="villa" aria-pressed="false">Villas</button>
+    <button class="filter-btn" data-filter="duplex" aria-pressed="false">Duplex</button>
+  </div>
+
+  <!-- Plans Grid - all cards rendered statically -->
+  <div class="plans-grid" id="plans-grid">
+    {{plansGrid}}
+  </div>
+</section>
+
+<!-- SEO TEXT -->
+<section class="seo-section" aria-label="À propos de WooPlans">
+  <div class="seo-inner">
+    <h2 class="seo-title">Plans de Maison pour l'Afrique Francophone</h2>
+    <div class="seo-text">
+      <p>WooPlans est la référence des plans architecturaux modernes en Afrique francophone. Notre catalogue de villas et duplex est spécialement conçu pour les terrains et les conditions de construction au Cameroun, en Côte d'Ivoire et au Sénégal.</p>
+      <p>Chaque plan inclut des dessins techniques détaillés, un devis estimatif complet en FCFA et des rendus 3D extérieurs pour visualiser votre future maison. Notre Plan Basique (14 900 FCFA) est téléchargeable instantanément après paiement.</p>
+      <p>Pour les projets de construction sur mesure, notre Plan Complet propose un accompagnement architectural personnalisé, incluant les plans d'exécution complets, le devis quantitatif par corps de métier et le suivi de chantier.</p>
+    </div>
+  </div>
+</section>
+
+<script src="/js/filters.{{jsHash}}.js" defer></script>

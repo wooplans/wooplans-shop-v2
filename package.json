@@ -1,0 +1,16 @@
+{
+  "name": "wooplans-shop-v2",
+  "version": "2.0.0",
+  "description": "WooPlans e-commerce SSG - Plans architecturaux pour l'Afrique",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && echo 'Build done. Serve dist/ with your local server.'"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/dm-sans": "^5.2.8"
+  }
+}

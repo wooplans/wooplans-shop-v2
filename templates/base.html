@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1208">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{canonical}}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{{ogType}}">
+  <meta property="og:title" content="{{ogTitle}}">
+  <meta property="og:description" content="{{ogDescription}}">
+  <meta property="og:image" content="{{ogImage}}">
+  <meta property="og:url" content="{{ogUrl}}">
+  <meta property="og:site_name" content="WooPlans">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ogTitle}}">
+  <meta name="twitter:description" content="{{ogDescription}}">
+  <meta name="twitter:image" content="{{ogImage}}">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://wooplans.b-cdn.net" crossorigin>
+  <link rel="preconnect" href="https://xlmwzvkqjnoijdldzrol.supabase.co" crossorigin>
+
+  {{preloadImage}}
+
+  <!-- Critical CSS inline -->
+  <style>{{criticalCss}}</style>
+
+  <!-- Main CSS deferred -->
+  <link rel="stylesheet" href="/css/main.{{cssHash}}.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/main.{{cssHash}}.css"></noscript>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{{jsonLd}}</script>
+</head>
+<body class="{{bodyClass}}">
+
+  <!-- Alert Bar -->
+  <div id="alert-bar">
+    📦 Téléchargement instantané après paiement &nbsp;·&nbsp; <strong>Livraison immédiate</strong>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="/" class="nav-logo" aria-label="WooPlans - Accueil">
+      <span class="nav-dot"></span>
+      WooPlans
+    </a>
+    <div class="nav-links">
+      <a href="/plans/villas/" class="nav-link">Villas</a>
+      <a href="/plans/duplex/" class="nav-link">Duplex</a>
+      <a href="/#catalogue" class="nav-cta">Voir les Plans</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    {{content}}
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">WooPlans</div>
+        <p class="footer-tagline">Plans architecturaux modernes conçus pour l'Afrique francophone. Téléchargement instantané.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Catalogue</div>
+        <a href="/plans/villas/" class="footer-link">Villas</a>
+        <a href="/plans/duplex/" class="footer-link">Duplex</a>
+        <a href="/#catalogue" class="footer-link">Tous les plans</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <a href="https://wa.me/237694327885" class="footer-link" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contact@wooplans.com" class="footer-link">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 WooPlans. Tous droits réservés.</span>
+      <div class="footer-legal">
+        <a href="/mentions-legales/" class="footer-link">Mentions légales</a>
+        <a href="/confidentialite/" class="footer-link">Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Analytics (defer) -->
+  <script src="/js/analytics.{{jsHash}}.js" defer></script>
+  <!-- Turbo Nav (defer) -->
+  <script src="/js/turbo-nav.{{jsHash}}.js" defer></script>
+  <!-- Page-specific scripts -->
+  {{pageScripts}}
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(){});
+      });
+    }
+  </script>
+
+  <!-- Nav scroll behavior -->
+  <script>
+    (function(){
+      var nav = document.getElementById('main-nav');
+      if (!nav) return;
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+      }, {passive: true});
+    })();
+  </script>
+</body>
+</html>
